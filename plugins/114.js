@@ -30,17 +30,21 @@ TOP UP? GAS TERUSS`;
   });
   m.reply(`*「 PESANAN SEDANG DI PROSES 」*`);
   let res = await fetch(
-    `https://v1.apigames.id/transaksi/http-get-v1?merchant=M220511FSMZ8818TO&secret=92b49f13e5d556ce5c2738a8d7163f4f699052c5859f8f3f833531a32acaca19&produk=ml${num}&tujuan=${id}&ref=JAVAN-${makeid(6)}`);
+    `https://v1.apigames.id/transaksi/http-get-v1?merchant=M230426EAMZ6622FT&secret=3ed3dcd6120e4dc8455eb39e6f9b212465056bae0824a0b20978b9a21f36941e&produk=ml86&tujuan=${id}&ref=JAVAN-${makeid(6)}`);
+
+  let ress = await fetch(`https://api.tokovoucher.id/v1/transaksi?ref_id=JAVAN${refid}&produk=gpmbl28&tujuan=${id}&secret=d975e3fcf109c81af68620f21f8d193e1e4dbf2b6a5858b1f6a8bd202eb8a87c&member_code=M230129SGPI6006LU`)
 
   let json = await res.json();
+    let jsonn = await ress.json();
   if (res.status !== 200) throw await res.text();
   if (!json.status) throw json;
   if (!id || !num) throw `TIDAK DIKETAHUI`;
   let ptn2023 = ` \n┃
 ┃> *🎮ID GAME:* ${json.data.destination}
-┃> *💎ORDERAN:* ${json.data.product_code} DM
+┃> *💎ORDERAN:* 114dm ml untuk event
 ┃> *🎰SN:* ${json.data.sn}
 ┃> *📂STATUS:* ${json.data.status}
+┃> *📂STATUS:* ${jsonn.status}
 ┃> *🕰️WAKTU:* ${date} ,${waktuSekarang}
 ┃> *Ref_id:* ${json.data.ref_id}
 ┃ *TERIMAKASIH TELAH ORDER DI JAVAN SHOP ID*
@@ -49,8 +53,8 @@ TOP UP? GAS TERUSS`;
 };
 handler.help = ["javan"];
 handler.rowner = true;
-handler.premium = false;
+handler.premium = true;
 handler.private = false;
-handler.command = /^(m)$/i;
+handler.command = /^(ml114)$/i;
 
 export default handler;
