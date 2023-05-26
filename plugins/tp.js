@@ -52,7 +52,6 @@ handler.help = ['tp']
 handler.owned = true
 handler.premium = true
 handler.private = false
-handler.group = true
 handler.command = /^(tp)$/i
 
 export default handler

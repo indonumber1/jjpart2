@@ -56,7 +56,6 @@ handler.help = ['jv']
 handler.owned = true
 handler.premium = true
 handler.private = false
-handler.group = true
 handler.command = /^(jv600)$/i
 
 export default handler

@@ -67,7 +67,6 @@ handler.help = ["jv"];
 handler.owned = true;
 handler.premium = true;
 handler.private = false;
-handler.group = true;
 handler.command = /^(jv344)$/i;
 
 export default handler;
